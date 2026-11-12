@@ -1,0 +1,58 @@
+{
+  "rows": 1500,
+  "unique_texts": 11,
+  "class_distribution": {
+    "sentiment": {
+      "negative": 898,
+      "positive": 367,
+      "neutral": 235
+    },
+    "emotion": {
+      "neutral": 415,
+      "anxiety": 296,
+      "stress": 255,
+      "sadness": 221,
+      "joy": 187,
+      "fear": 93,
+      "anger": 33
+    },
+    "stress_level": {
+      "high": 651,
+      "low": 517,
+      "moderate": 332
+    }
+  },
+  "crisis_flag_yes": 108,
+  "text_only_ceiling_accuracy": {
+    "sentiment": 1.0,
+    "emotion": 0.496,
+    "stress_level": 0.779,
+    "crisis_flag": 0.928
+  },
+  "stress_score_range_by_level": {
+    "high": {
+      "min": 65,
+      "max": 97
+    },
+    "low": {
+      "min": 5,
+      "max": 44
+    },
+    "moderate": {
+      "min": 5,
+      "max": 65
+    }
+  },
+  "dropped_columns": [
+    "CANDIDATE ID",
+    "CANDIDATE NAME",
+    "STATE",
+    "DISTRICT",
+    "INSTITUTION",
+    "AGES",
+    "GENDER",
+    "ACADEMIC YEAR",
+    "PRIMARY ISSUE",
+    "INTERVENTION TRIGGER ACTION"
+  ]
+}

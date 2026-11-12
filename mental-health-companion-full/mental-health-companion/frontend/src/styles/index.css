@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { @apply bg-white text-slate-900 dark:bg-navy-deep dark:text-slate-100; }
+.skip-link { @apply absolute -top-10 left-2 z-50 rounded bg-brand px-3 py-2 text-white focus:top-2; }

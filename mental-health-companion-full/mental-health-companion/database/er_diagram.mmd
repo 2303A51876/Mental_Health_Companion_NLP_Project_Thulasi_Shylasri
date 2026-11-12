@@ -1,0 +1,42 @@
+erDiagram
+  users ||--|| profiles : has
+  users ||--o| psychologist_profiles : "if psychologist"
+  users ||--o{ refresh_tokens : sessions
+  users ||--o{ emergency_contacts : has
+  users ||--o{ consents : grants
+  users ||--o{ journal_entries : writes
+  users ||--o{ analysis_results : "denormalized FK"
+  journal_entries ||--o{ analysis_results : analyzed_by
+  analysis_results }o--o| model_versions : produced_by
+  analysis_results ||--o{ prediction_reviews : reviewed_in
+  users ||--o{ crisis_alerts : triggers
+  journal_entries ||--o{ crisis_alerts : source
+  crisis_alerts ||--o{ alert_actions : lifecycle
+  users ||--o{ chat_sessions : opens
+  chat_sessions ||--o{ chat_messages : contains
+  chat_messages }o--o| analysis_results : analyzed_as
+  users ||--o{ trend_summaries : summarized_in
+  users ||--o{ patient_assignments : "patient / psychologist / staff"
+  users ||--o{ availability_slots : "psychologist offers"
+  availability_slots ||--o{ appointments : booked_as
+  users ||--o{ appointments : "patient / psychologist"
+  appointments ||--o{ clinical_notes : documented_in
+  clinical_notes ||--o| clinical_notes : version_of
+  users ||--o{ assignments : "psychologist -> patient"
+  users ||--o{ messages : "sender / receiver"
+  users ||--o{ notifications : receives
+  users ||--|| notification_preferences : configures
+  users ||--o{ goals_habits : tracks
+  goals_habits ||--o{ habit_logs : logged_as
+  users ||--|| safety_plans : owns
+  users ||--o{ questionnaire_responses : submits
+  questionnaires ||--o{ questionnaire_responses : scored_in
+  users ||--o{ recommendation_history : sees
+  recommendations ||--o{ recommendation_history : shown_as
+  users ||--o{ feedback : gives
+  users ||--o{ support_tickets : raises
+  users ||--o{ data_requests : requests
+  users ||--o{ announcements : authors
+  datasets ||--o{ model_versions : trains
+  model_versions ||--o{ model_metrics : measured_by
+  users ||--o{ datasets : uploads

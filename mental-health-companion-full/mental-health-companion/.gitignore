@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+node_modules/
+dist/
+.venv/
+ml/saved_models/*
+!ml/saved_models/.gitkeep
+pgdata/
+*.log
+.pytest_cache/
